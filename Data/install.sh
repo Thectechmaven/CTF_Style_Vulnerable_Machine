@@ -1,8 +1,6 @@
 # installation commands for the vulnerable machine CYBERHUNT
 # do not run this machine in your local network without monitoring it
 # user: digitalhunter 
-# password : twistedmetal
-# root password: rtyrailtzans
 
 # Set DEBIAN_FRONTEND to non-interactive to suppress prompts during package installation
 export DEBIAN_FRONTEND=noninteractive
