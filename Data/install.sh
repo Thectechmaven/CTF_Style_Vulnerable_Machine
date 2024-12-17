@@ -164,10 +164,5 @@ sudo rm -rf /home/digitalhunter/.sudo_as_admin_successful
 sudo rm -rf /home/digitalhunter/.cache
 sudo rm -rf /home/digitalhunter/.viminfo
 find /var/log -type f -exec sh -c "cat /dev/null > {}" \;
-sudo apt-get clean
-sudo rm -rf /var/lib/apt/lists/*
-sudo rm -rf /home/digitalhunter/.bash_logout
-sudo rm -rf /home/digitalhunter/.bashrc
-sudo rm -rf /home/digitalhunter/.profile
 
 echo "[+] CYBERHUNT setup complete. Have fun!"
