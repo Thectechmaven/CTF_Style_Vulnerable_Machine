@@ -1,5 +1,5 @@
 # CTF_Style_Vulnerable_Machine
-Tools and script to create vulnerable lab designed for penetration testing and CTF enthusiasts.
+Tools and scripts to create vulnerable lab designed for penetration testing and CTF enthusiasts.
 
 # Vagrant Windows Installation Instructions
 What is Vagrant? Found here: https://developer.hashicorp.com/vagrant/tutorials/getting-started/getting-started-index
