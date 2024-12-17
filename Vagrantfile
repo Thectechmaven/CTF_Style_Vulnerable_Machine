@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/bionic64"  # You can use this box or choose a different box. 
-  config.vm.box_version = "20230607.0.5" # Specify the explicit version of the box.
-  config.vm.hostname = "<your_hostname>" # Choose your hostname here.
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.box_version = "20230607.0.5"
+  config.vm.hostname = "digitalhunter"
 
   # Disable the default share of the current code directory. Doing this
   # provides improved isolation between the vagrant box and your host
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   config.vm.provider "virtualbox" do |vb|
-   Display the VirtualBox GUI when booting the machine
+  # Display the VirtualBox GUI when booting the machine
     vb.gui = true
   
   # Customize the amount of memory on the VM:
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
    end
   
   # Upload the install.sh script
-  config.vm.provision "file", source: "C:/Path/to/your/data/install.sh", destination: "/tmp/install.sh"
+  config.vm.provision "file", source: "F:/MrRobot/projects/vulnboxctf/data/install.sh", destination: "/tmp/install.sh"
 
   # Ensure line endings are Unix-style, make executable, and run the script
   config.vm.provision "shell", inline: <<-SHELL
