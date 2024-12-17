@@ -1,7 +1,8 @@
 # installation commands for the vulnerable machine CYBERHUNT
 # do not run this machine in your local network without monitoring it
 # user: digitalhunter 
-# PASSWORDS and HASHES redacted from this script to prevent some spoilers.
+# password : twistedmetal
+# root password: rtyrailtzans
 
 # Set DEBIAN_FRONTEND to non-interactive to suppress prompts during package installation
 export DEBIAN_FRONTEND=noninteractive
@@ -50,13 +51,13 @@ sudo apt-get install -y build-essential
 
 # Create the txt file in /var/ftp
 echo "[+] Creating FTP-accessible file..."
-echo -e "For the digital hunter who is on to the scent: <HASH_VALUE>\n\nWhat lies beyond the surface is yet to be revealed. Only those who decode the shadows will uncover the whole truth.\n\nStay sharp, stay hidden." | sudo tee /var/ftp/cyberscent.txt
+echo -e "For the digital hunter who is on to the scent: c9185060f3acf9641149a96bb419fb41\n\nWhat lies beyond the surface is yet to be revealed. Only those who decode the shadows will uncover the whole truth.\n\nStay sharp, stay hidden." | sudo tee /var/ftp/cyberscent.txt
 sudo chmod 644 /var/ftp/cyberscent.txt
 
 # Create user "digitalhunter"
 echo "[+] Adding user 'digitalhunter'..."
 sudo useradd -m digitalhunter || { echo "Failed to add user 'digitalhunter'"; exit 1; }
-echo "digitalhunter:<PASSWORD>" | sudo chpasswd
+echo "digitalhunter:twistedmetal" | sudo chpasswd
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sudo systemctl restart sshd || { echo "Failed to restart SSH service"; exit 1; }
 
@@ -68,7 +69,7 @@ sudo chown digitalhunter:digitalhunter /home/digitalhunter/user.txt
 
 # Change the password for the existing root user
 echo "[+] Updating password for root user..."
-echo "root:<ROOT_PASSWORD>" | sudo chpasswd || { echo "Failed to update root password"; exit 1; }
+echo "root:rtyrailtzans" | sudo chpasswd || { echo "Failed to update root password"; exit 1; }
 
 # Root SSH Login
 echo "[+] Enabling root SSH login"
@@ -101,7 +102,7 @@ Congratulations!!
 You have successfully reached the root flag in this CTF challenge.
 
 Username: root
-Password: <ROOT_PASSWORD>
+Password: rtyrailtzans
 
 @creator
 Cybertech Maven
